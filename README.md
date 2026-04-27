@@ -1,7 +1,7 @@
 # LAB10_security
 # LAB 10 : Guide d'installation de Frida
 
-> **Étudiant :** iliass | **Machine :** MyKaliLinux  
+> **Étudiant :** iliass Chbani | **Machine :** MyKaliLinux  
 > **Environnement :** Kali Linux + Émulateur Android (x86) via ADB over TCP
 
 ---
@@ -18,9 +18,8 @@ $ frida-ps --version
 17.9.1
 ```
 
-**Capture :**
+<img width="865" height="222" alt="image" src="https://github.com/user-attachments/assets/71d78596-3c26-4a1e-8d48-84d5f0e95baf" />
 
-![frida version](screenshots/image1.png)
 
 > Frida 17.9.1 est correctement installé sur la machine Kali. Les deux outils `frida` et `frida-ps` sont disponibles et à jour.
 
@@ -37,9 +36,8 @@ List of devices attached
 192.168.1.214:5556    device
 ```
 
-**Capture :**
+<img width="964" height="234" alt="image" src="https://github.com/user-attachments/assets/6c0b6464-9182-400a-ae10-fdd3370bd6a7" />
 
-![adb devices](screenshots/image2.png)
 
 > L'émulateur Android est accessible via ADB over TCP sur `192.168.1.214:5556`. Le device est bien reconnu et en état `device` (prêt).
 
@@ -71,9 +69,8 @@ generic_x86_arm:/ # /data/local/tmp/frida-server &
 generic_x86_arm:/ #
 ```
 
-**Capture :**
+<img width="1192" height="506" alt="image" src="https://github.com/user-attachments/assets/50a73f93-a5f5-461a-8662-b8421d1e2a24" />
 
-![frida server deploy](screenshots/image3.png)
 
 > Le serveur Frida tourne en arrière-plan (PID 6949) avec les droits root sur l'émulateur Android x86.
 
@@ -91,9 +88,8 @@ $ frida -H 127.0.0.1:27042 -f com.pwnsec.firestorm -l frida_firestorm.js
 
 ### 3.2 Résultat de l'injection
 
-**Capture :**
+<img width="1177" height="556" alt="image" src="https://github.com/user-attachments/assets/5534ea51-183f-4aa9-bab4-0328c368d15d" />
 
-![frida injection](screenshots/image4.png)
 
 > L'application a été spawnée, le script chargé avec succès, et le hook installé. La session s'est terminée proprement après `exit`.
 
@@ -123,6 +119,7 @@ $ frida -H 127.0.0.1:27042 -f com.pwnsec.firestorm -l frida_firestorm.js
 
 **Erreur obtenue :**
 
+Failed to connect to remote frida-server: unable to connect to 127.0.0.1:27042
 ---
 
 ### 4.3 Diagnostic étape par étape
